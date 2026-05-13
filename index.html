@@ -1,48 +1,51 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>min(a,b) + переменные + возраст</title>
+    <title>Резюме + задания</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Задание 1: min(a, b)</h1>
-    
-    <label>Число A: </label>
-    <input type="number" id="a" value="5">
-    <br><br>
-    
-    <label>Число B: </label>
-    <input type="number" id="b" value="3">
-    <br><br>
-    
-    <button onclick="showMin()">Найти минимум</button>
-    
-    <h2>Результат: <span id="result">—</span></h2>
 
-    <hr>
+    <div class="resume">
+        <h1>Резюме</h1>
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Фото">
+        <p><strong>Имя:</strong> Евгений</p>
+        <p><strong>Фамилия:</strong> <span id="lastname">Смирнов</span></p>
+        
+        <input type="text" id="newLastName" placeholder="Новая фамилия">
+        <button onclick="changeLastName()">Изменить фамилию</button>
+    </div>
 
-    <h1>Задание 2: переменные admin и name</h1>
-    <button onclick="showAdmin()">Вывести admin</button>
-    <h2>admin = <span id="adminResult">—</span></h2>
+    <div class="task">
+        <h2>Задание 1: min(a, b)</h2>
+        <input type="number" id="a" value="5">
+        <input type="number" id="b" value="3">
+        <button onclick="showMin()">Найти минимум</button>
+        <p>Результат: <span id="result">—</span></p>
+    </div>
 
-    <hr>
+    <div class="task">
+        <h2>Задание 2: переменные admin и name</h2>
+        <button onclick="showAdmin()">Вывести admin</button>
+        <p>admin = <span id="adminResult">—</span></p>
+    </div>
 
-    <h1>Задание 3: проверка возраста</h1>
-    <button onclick="askAge()">Ввести возраст</button>
+    <div class="task">
+        <h2>Задание 3: проверка возраста</h2>
+        <button onclick="askAge()">Ввести возраст</button>
+    </div>
 
     <script>
         function min(a, b) {
-            if (a < b) {
-                return a;
-            } else {
-                return b;
-            }
+            if (a < b) return a;
+            else return b;
         }
 
         function showMin() {
             let a = Number(document.getElementById('a').value);
-            let b = Number(document.getElementById('b').value);            let result = min(a, b);
-            document.getElementById('result').innerHTML = result;
+            let b = Number(document.getElementById('b').value);
+            document.getElementById('result').innerHTML = min(a, b);
         }
 
         let name = "Евгений";
@@ -56,21 +59,27 @@
             let age;
             do {
                 age = prompt("Сколько вам лет?");
-                if (age === null) {
-                    continue;
-                }
+                if (age === null) continue;
                 age = Number(age);
                 if (isNaN(age)) {
-                    alert("Пожалуйста, введите число");
+                    alert("Введите число");
                     age = null;
                 }
             } while (age === null);
             
-            let confirmAge = confirm("Вам " + age + " лет?");
-            if (confirmAge === true) {
+            if (confirm("Вам " + age + " лет?")) {
                 alert("Спасибо!");
             } else {
                 askAge();
+            }
+        }
+
+        function changeLastName() {
+            let newName = document.getElementById('newLastName').value;
+            if (newName !== "") {
+                document.getElementById('lastname').innerHTML = newName;
+            } else {
+                alert("Введите фамилию");
             }
         }
     </script>

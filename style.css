@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f5f5f5;
+}
+h1 {
+    font-size: 28px;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+h2 {
+    font-size: 22px;
+    color: #555;
+}
+.resume {
+    background: white;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    max-width: 500px;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+}
+.resume img {
+    width: 150px;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+}
+.resume p {
+    font-size: 18px;
+    color: #444;
+}
+.resume button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.resume button:hover {
+    background: #0056b3;
+    transform: scale(1.02);
+}
+.resume input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.task {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+hr {
+    margin: 30px 0;
+}
+button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background: #218838;
+}
