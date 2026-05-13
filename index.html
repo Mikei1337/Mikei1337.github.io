@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>min(a,b) + переменные</title>
+    <title>min(a,b) + переменные + возраст</title>
 </head>
 <body>
     <h1>Задание 1: min(a, b)</h1>
@@ -25,6 +25,11 @@
     <button onclick="showAdmin()">Вывести admin</button>
     <h2>admin = <span id="adminResult">—</span></h2>
 
+    <hr>
+
+    <h1>Задание 3: проверка возраста</h1>
+    <button onclick="askAge()">Ввести возраст</button>
+
     <script>
         function min(a, b) {
             if (a < b) {
@@ -46,6 +51,28 @@
 
         function showAdmin() {
             document.getElementById('adminResult').innerHTML = admin;
+        }
+
+        function askAge() {
+            let age;
+            do {
+                age = prompt("Сколько вам лет?");
+                if (age === null) {
+                    continue;
+                }
+                age = Number(age);
+                if (isNaN(age)) {
+                    alert("Пожалуйста, введите число");
+                    age = null;
+                }
+            } while (age === null);
+            
+            let confirmAge = confirm("Вам " + age + " лет?");
+            if (confirmAge === true) {
+                alert("Спасибо!");
+            } else {
+                askAge();
+            }
         }
     </script>
 </body>
