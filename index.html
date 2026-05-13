@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>min(a,b)</title>
+</head>
+<body>
+    <h1>min(a, b)</h1>
+    
+    <label>Число A: </label>
+    <input type="number" id="a" value="5">
+    <br><br>
+    
+    <label>Число B: </label>
+    <input type="number" id="b" value="3">
+    <br><br>
+    
+    <button onclick="showMin()">Найти минимум</button>
+    
+    <h2>Результат: <span id="result">—</span></h2>
+
+    <script>
+        function min(a, b) {
+            if (a < b) {
+                return a;
+            } else {
+                return b;
+            }
+        }
+
+        function showMin() {
+            let a = Number(document.getElementById('a').value);
+            let b = Number(document.getElementById('b').value);
+            let result = min(a, b);
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>
